@@ -1,6 +1,7 @@
 package com.example.helloscope.tenant.context.config;
 
 import com.example.helloscope.tenant.TenantContextHolder;
+import com.example.helloscope.tenant.TenantTemplate;
 import com.example.helloscope.tenant.jms.TenantAwareMessageListenerContainer;
 import com.example.helloscope.tenant.jms.TenantJmsResolver;
 import com.example.helloscope.tenant.jms.TenantJmsResolverImpl;
@@ -42,6 +43,11 @@ public class TenantScopeConfig {
     }
 
     @Bean
+    public TenantTemplate tenantTemplate(TenantContextHolder tenantContextHolder) {
+        return new TenantTemplate(tenantContextHolder);
+    }
+
+    @Bean
     public TenantJmsResolver tenantJmsResolver() {
         return new TenantJmsResolverImpl();
     }
@@ -51,12 +57,12 @@ public class TenantScopeConfig {
             ConnectionFactory connectionFactory,
             DefaultJmsListenerContainerFactoryConfigurer configurer,
             TenantJmsResolver tenantJmsResolver,
-            TenantContextHolder tenantContextHolder) {
+            TenantTemplate tenantTemplate) {
         DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory() {
             @Override
             protected DefaultMessageListenerContainer createContainerInstance() {
                 log.info("Creating new TenantAwareMessageListenerContainer");
-                return new TenantAwareMessageListenerContainer(tenantJmsResolver, tenantContextHolder);
+                return new TenantAwareMessageListenerContainer(tenantJmsResolver, tenantTemplate);
             }
         };
         configurer.configure(factory, connectionFactory);
