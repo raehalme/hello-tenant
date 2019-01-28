@@ -9,6 +9,11 @@ public class ThreadLocalTenantContextHolder implements TenantContextHolder {
     private ThreadLocal<TenantContext> holder = new ThreadLocal();
 
     @Override
+    public boolean isTenantDefined() {
+        return holder.get() != null;
+    }
+
+    @Override
     public TenantContext getTenantContext() {
         TenantContext context = holder.get();
         if (context == null) {

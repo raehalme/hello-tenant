@@ -16,6 +16,11 @@ public class TenantContext {
         return tenantId;
     }
 
+    @Override
+    public String toString() {
+        return "TenantContext{" + tenantId + '}';
+    }
+
     public static TenantContext of(String tenantId) {
         return new TenantContext(tenantId);
     }
