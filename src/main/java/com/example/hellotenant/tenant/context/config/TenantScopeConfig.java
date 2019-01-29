@@ -1,11 +1,12 @@
 package com.example.hellotenant.tenant.context.config;
 
-import com.example.hellotenant.tenant.TenantContextHolder;
 import com.example.hellotenant.tenant.TenantTemplate;
+import com.example.hellotenant.tenant.context.scope.TenantScope;
+import com.example.hellotenant.tenant.holder.TenantContextHolder;
+import com.example.hellotenant.tenant.holder.ThreadLocalTenantContextHolder;
 import com.example.hellotenant.tenant.jms.TenantAwareMessageListenerContainer;
 import com.example.hellotenant.tenant.jms.TenantJmsResolver;
 import com.example.hellotenant.tenant.jms.TenantJmsResolverImpl;
-import com.example.hellotenant.tenant.scope.TenantScope;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,11 @@ import javax.jms.ConnectionFactory;
 @Configuration
 public class TenantScopeConfig {
     private static final Logger log = LoggerFactory.getLogger(TenantScopeConfig.class);
+
+    @Bean
+    public TenantContextHolder tenantContextHolder() {
+        return new ThreadLocalTenantContextHolder();
+    }
 
     @Bean
     public static CustomScopeConfigurer customScopeConfigurer(TenantScope tenantScope) {

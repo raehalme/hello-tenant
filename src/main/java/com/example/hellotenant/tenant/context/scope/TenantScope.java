@@ -1,8 +1,8 @@
-package com.example.hellotenant.tenant.scope;
+package com.example.hellotenant.tenant.context.scope;
 
 import com.example.hellotenant.tenant.TenantContext;
-import com.example.hellotenant.tenant.TenantContextHolder;
 import com.example.hellotenant.tenant.TenantContextProvider;
+import com.example.hellotenant.tenant.holder.TenantContextHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.ObjectFactory;
@@ -13,6 +13,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * Implements tenant specific scope. This implementation of {@link Scope} should be registered as a custom scope.
+ */
 public class TenantScope implements Scope {
     public static final String SCOPE_NAME = "tenant";
     private static final Logger log = LoggerFactory.getLogger(TenantScope.class);

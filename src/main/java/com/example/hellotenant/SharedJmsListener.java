@@ -13,6 +13,9 @@ import org.springframework.stereotype.Component;
 public class SharedJmsListener {
     private static final Logger log = LoggerFactory.getLogger(SharedJmsListener.class);
 
+    /**
+     * This is a proxy which connects the tenant specific instance.
+     */
     @Autowired
     private TenantBean tenantBean;
 

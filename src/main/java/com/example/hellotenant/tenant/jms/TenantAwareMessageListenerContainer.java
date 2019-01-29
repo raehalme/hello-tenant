@@ -11,6 +11,9 @@ import javax.jms.Message;
 import javax.jms.Session;
 import java.util.Objects;
 
+/**
+ * Resolves the current {@link TenantContext}, if any, and makes it accessible to the message listener.
+ */
 public class TenantAwareMessageListenerContainer extends DefaultMessageListenerContainer {
     private static final Logger log = LoggerFactory.getLogger(TenantAwareMessageListenerContainer.class);
     private final TenantJmsResolver tenantJmsResolver;

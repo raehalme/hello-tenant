@@ -17,6 +17,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Resolves the current {@link TenantContext}, if any, and makes it accessible for the {@link HttpServletRequest}.
+ */
 @Component
 public class TenantAwareHttpFilter implements Filter {
     private static final Logger log = LoggerFactory.getLogger(TenantAwareHttpFilter.class);
@@ -45,9 +48,14 @@ public class TenantAwareHttpFilter implements Filter {
 
     private void doFilter(HttpServletRequest httpRequest, HttpServletResponse httpResponse, FilterChain filterChain) throws Exception {
         String tenantId = tenantHttpResolver.resolveTenantId(httpRequest);
-        log.debug("doFilter: {}", tenantId);
-        TenantContext context = TenantContext.of(tenantId);
-        tenantTemplate.with(context, () -> filterChain.doFilter(httpRequest, httpResponse));
+        if (tenantId == null) {
+            filterChain.doFilter(httpRequest, httpResponse);
+        }
+        else {
+            log.debug("doFilter: {}", tenantId);
+            TenantContext context = TenantContext.of(tenantId);
+            tenantTemplate.with(context, () -> filterChain.doFilter(httpRequest, httpResponse));
+        }
     }
 
     @Override

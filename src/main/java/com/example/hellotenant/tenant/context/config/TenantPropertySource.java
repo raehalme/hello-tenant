@@ -22,6 +22,8 @@ public class TenantPropertySource extends PropertySource<TenantContextProvider> 
         else {
             TenantContext tenantContext = tenantContextProvider.getTenantContext();
             log.debug("Resolving property {} from tenant context: {}", name, tenantContext);
+            // Here you should implement proper resolution of tenant specific properties.
+            // This is just an example and a placeholder for the actual implementation.
             if (name.equals("tenant.id")) {
                 return tenantContext.getTenantId();
             }

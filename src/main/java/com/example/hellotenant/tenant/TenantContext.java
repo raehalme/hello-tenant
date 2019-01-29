@@ -2,6 +2,9 @@ package com.example.hellotenant.tenant;
 
 import org.springframework.util.StringUtils;
 
+/**
+ * Represents a tenant context where each tenant is uniquely identified by a tenant id.
+ */
 public class TenantContext {
     private final String tenantId;
 

@@ -1,7 +1,6 @@
-package com.example.hellotenant.tenant.impl;
+package com.example.hellotenant.tenant.holder;
 
 import com.example.hellotenant.tenant.TenantContext;
-import com.example.hellotenant.tenant.TenantContextHolder;
 
 import java.util.Objects;
 
