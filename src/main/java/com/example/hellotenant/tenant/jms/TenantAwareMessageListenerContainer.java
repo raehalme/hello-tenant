@@ -1,7 +1,7 @@
-package com.example.helloscope.tenant.jms;
+package com.example.hellotenant.tenant.jms;
 
-import com.example.helloscope.tenant.TenantContext;
-import com.example.helloscope.tenant.TenantTemplate;
+import com.example.hellotenant.tenant.TenantContext;
+import com.example.hellotenant.tenant.TenantTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jms.listener.DefaultMessageListenerContainer;

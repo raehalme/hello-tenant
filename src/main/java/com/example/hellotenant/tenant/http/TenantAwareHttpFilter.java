@@ -1,7 +1,7 @@
-package com.example.helloscope.tenant.http;
+package com.example.hellotenant.tenant.http;
 
-import com.example.helloscope.tenant.TenantContext;
-import com.example.helloscope.tenant.TenantTemplate;
+import com.example.hellotenant.tenant.TenantContext;
+import com.example.hellotenant.tenant.TenantTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

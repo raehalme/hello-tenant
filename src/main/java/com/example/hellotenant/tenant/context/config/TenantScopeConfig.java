@@ -1,11 +1,11 @@
-package com.example.helloscope.tenant.context.config;
+package com.example.hellotenant.tenant.context.config;
 
-import com.example.helloscope.tenant.TenantContextHolder;
-import com.example.helloscope.tenant.TenantTemplate;
-import com.example.helloscope.tenant.jms.TenantAwareMessageListenerContainer;
-import com.example.helloscope.tenant.jms.TenantJmsResolver;
-import com.example.helloscope.tenant.jms.TenantJmsResolverImpl;
-import com.example.helloscope.tenant.scope.TenantScope;
+import com.example.hellotenant.tenant.TenantContextHolder;
+import com.example.hellotenant.tenant.TenantTemplate;
+import com.example.hellotenant.tenant.jms.TenantAwareMessageListenerContainer;
+import com.example.hellotenant.tenant.jms.TenantJmsResolver;
+import com.example.hellotenant.tenant.jms.TenantJmsResolverImpl;
+import com.example.hellotenant.tenant.scope.TenantScope;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

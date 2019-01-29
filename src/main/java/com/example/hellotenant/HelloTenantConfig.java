@@ -1,14 +1,13 @@
-package com.example.helloscope.config;
+package com.example.hellotenant;
 
-import com.example.helloscope.TenantBean;
-import com.example.helloscope.tenant.TenantContextHolder;
-import com.example.helloscope.tenant.context.annotation.TenantScope;
-import com.example.helloscope.tenant.impl.ThreadLocalTenantContextHolder;
+import com.example.hellotenant.tenant.TenantContextHolder;
+import com.example.hellotenant.tenant.context.annotation.TenantScope;
+import com.example.hellotenant.tenant.impl.ThreadLocalTenantContextHolder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class HelloScopeConfig {
+public class HelloTenantConfig {
     @Bean
     public TenantContextHolder tenantContextHolder() {
         return new ThreadLocalTenantContextHolder();

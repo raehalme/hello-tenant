@@ -1,7 +1,7 @@
-package com.example.helloscope.tenant.impl;
+package com.example.hellotenant.tenant.impl;
 
-import com.example.helloscope.tenant.TenantContext;
-import com.example.helloscope.tenant.TenantContextHolder;
+import com.example.hellotenant.tenant.TenantContext;
+import com.example.hellotenant.tenant.TenantContextHolder;
 
 import java.util.Objects;
 

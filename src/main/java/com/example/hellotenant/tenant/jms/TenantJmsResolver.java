@@ -1,4 +1,4 @@
-package com.example.helloscope.tenant.jms;
+package com.example.hellotenant.tenant.jms;
 
 import javax.jms.Message;
 

@@ -1,8 +1,8 @@
-package com.example.helloscope.tenant.scope;
+package com.example.hellotenant.tenant.scope;
 
-import com.example.helloscope.tenant.TenantContext;
-import com.example.helloscope.tenant.TenantContextHolder;
-import com.example.helloscope.tenant.TenantContextProvider;
+import com.example.hellotenant.tenant.TenantContext;
+import com.example.hellotenant.tenant.TenantContextHolder;
+import com.example.hellotenant.tenant.TenantContextProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.ObjectFactory;

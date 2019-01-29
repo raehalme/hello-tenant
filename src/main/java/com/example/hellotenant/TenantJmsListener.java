@@ -1,4 +1,4 @@
-package com.example.helloscope;
+package com.example.hellotenant;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

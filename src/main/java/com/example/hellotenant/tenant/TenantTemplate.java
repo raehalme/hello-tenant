@@ -1,4 +1,4 @@
-package com.example.helloscope.tenant;
+package com.example.hellotenant.tenant;
 
 import org.slf4j.MDC;
 

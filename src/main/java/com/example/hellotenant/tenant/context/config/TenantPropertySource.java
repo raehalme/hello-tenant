@@ -1,7 +1,7 @@
-package com.example.helloscope.tenant.context.config;
+package com.example.hellotenant.tenant.context.config;
 
-import com.example.helloscope.tenant.TenantContext;
-import com.example.helloscope.tenant.TenantContextProvider;
+import com.example.hellotenant.tenant.TenantContext;
+import com.example.hellotenant.tenant.TenantContextProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.env.PropertySource;

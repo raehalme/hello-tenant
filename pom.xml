@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
-	<artifactId>hello-scope</artifactId>
+	<artifactId>hello-tenant</artifactId>
 	<version>0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -16,7 +16,7 @@
 	</parent>
 
 	<scm>
-		<connection>scm:git:git@github.com:raehalme/hello-scope.git</connection>
+		<connection>scm:git:git@github.com:raehalme/hello-tenant.git</connection>
 	</scm>
 
 	<dependencies>
@@ -31,7 +31,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>hello-scope</finalName>
+		<finalName>hello-tenant</finalName>
 		<plugins>
 			<plugin>
 				 <groupId>org.springframework.boot</groupId>

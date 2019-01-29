@@ -1,9 +1,6 @@
-package com.example.helloscope;
-
-import com.example.helloscope.tenant.context.annotation.TenantScope;
+package com.example.hellotenant;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
 //@Component @TenantScope
 public class TenantBean {
