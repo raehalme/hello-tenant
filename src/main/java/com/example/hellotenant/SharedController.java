@@ -4,8 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * This single instance serves all tenants.
+ */
 @RestController
-public class TenantController {
+public class SharedController {
     @Autowired
     private TenantBean tenantBean;
 

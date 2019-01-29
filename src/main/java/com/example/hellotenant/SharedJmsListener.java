@@ -6,9 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Component;
 
+/**
+ * This single instance serves all tenants.
+ */
 @Component
-public class TenantJmsListener {
-    private static final Logger log = LoggerFactory.getLogger(TenantJmsListener.class);
+public class SharedJmsListener {
+    private static final Logger log = LoggerFactory.getLogger(SharedJmsListener.class);
 
     @Autowired
     private TenantBean tenantBean;
