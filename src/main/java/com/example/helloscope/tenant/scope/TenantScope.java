@@ -2,6 +2,7 @@ package com.example.helloscope.tenant.scope;
 
 import com.example.helloscope.tenant.TenantContext;
 import com.example.helloscope.tenant.TenantContextHolder;
+import com.example.helloscope.tenant.TenantContextProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.ObjectFactory;
@@ -15,14 +16,14 @@ import java.util.Objects;
 public class TenantScope implements Scope {
     public static final String SCOPE_NAME = "tenant";
     private static final Logger log = LoggerFactory.getLogger(TenantScope.class);
-    private final TenantContextHolder tenantContextHolder;
+    private final TenantContextProvider tenantContextProvider;
     private final Map<String, Map<String, Object>> scopedObjects
             = Collections.synchronizedMap(new HashMap());
     private final Map<String, Map<String, Runnable>> destructionCallbacks
             = Collections.synchronizedMap(new HashMap());
 
-    public TenantScope(TenantContextHolder tenantContextHolder) {
-        this.tenantContextHolder = Objects.requireNonNull(tenantContextHolder);
+    public TenantScope(TenantContextHolder tenantContextProvider) {
+        this.tenantContextProvider = Objects.requireNonNull(tenantContextProvider);
     }
 
     @Override
@@ -40,7 +41,7 @@ public class TenantScope implements Scope {
     }
 
     private String getTenantId() {
-        TenantContext tenantContext = tenantContextHolder.getTenantContext();
+        TenantContext tenantContext = tenantContextProvider.getTenantContext();
         return tenantContext.getTenantId();
     }
 
